@@ -9,7 +9,8 @@ import { AppComponent } from './app.component';
 import { BsDropdownModule } from 'ngx-bootstrap';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
-import { TestComponent } from './login/test/test.component'
+import { HttpModule } from '@angular/http';
+import { HomeComponent } from './home/home.component';
 
 
 @NgModule({
@@ -17,12 +18,13 @@ import { TestComponent } from './login/test/test.component'
 		AppComponent,
 		LoginComponent,
 		RegisterComponent,
-		TestComponent
+		HomeComponent,
 	],
 	imports: [
 		RouterModule,
 		BrowserModule,
 		FormsModule,
+		HttpModule,
 		BsDropdownModule.forRoot(),
 		AppRouter
 	],
