@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Http } from '@angular/http';
 import { Response } from '@angular/http';
+import { Http } from '@angular/http';
 import { Router } from '@angular/router';
 
 @Component({
@@ -10,43 +10,41 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-	private email:string;
-	private password:string;
-	private remember_me:boolean = false;
+	private user:any = {
+		email: "",
+		password: "",
+	}
 
 	constructor(
 		private http:Http,
 		private router:Router
-	) { }
+	){ }
 
 	ngOnInit() {
 
 	}
 
+	private USER_ID = 2;
 	submit(){
-		
-		let post_data = {
-			email: this.email,
-			password: this.password,
-			remember_me: this.remember_me
-		}
-
-		// GEt, POST, PUT, DELET, PATCH
-		this
-			.http
-			.post("https://reqres.in/api/login",post_data)
-			.map( (response: Response) => response.json() )
-			.subscribe( 
-				//success
+		this.http
+			.post("https://reqres.in/api/login", this.user)
+			.map( (response:Response) => response.json() )
+			.subscribe(
 				response => {
-					if(response.token){
-						this.router.navigate(['home']);
-					}
+
+						this
+							.http
+							.get(`https://reqres.in/api/users/${this.USER_ID}`)
+							.subscribe( _response => {
+								let response = _response.json();
+								localStorage.setItem('userData',JSON.stringify(response));
+								this.router.navigate(['register']);
+							} )
+			
 				},
-				//error
 				error => {
-					console.error(error);
-				} 
+					alert(error.json().error);
+				}
 			)
 
 	}

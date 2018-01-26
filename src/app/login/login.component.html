@@ -3,26 +3,17 @@
         <div class="col-4 offset-4">
             <div class="card mt-5">
                 <div class="card-body">
-                    <div>
-                        <h4 class="card-title">Login</h4>
-                        <p class="card-text">Kindly Enter your credentials to continue</p>
-                    </div>
-                    <div class="form">
+                    <form>
                         <div class="form-group">
-                            <label for="InputEmail1">Email address</label>
-                            <input type="email" [(ngModel)]="email" class="form-control" id="InputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                            <label for="email">Email</label>
+                            <input type="email" [(ngModel)]="user.email" name="email" id="email-id" class="form-control" placeholder="jon@doe.com" aria-describedby="helpId">
                         </div>
                         <div class="form-group">
-                            <label for="InputPassword1">Password</label>
-                            <input type="password" [(ngModel)]="password" class="form-control" id="InputPassword1" placeholder="Password">
+                            <label for="password">Password</label>
+                            <input type="password" [(ngModel)]="user.password" name="password" id="password-id" class="form-control" aria-describedby="helpId">
                         </div>
-                        <div class="form-check">
-                            <input [(ngModel)]="remember_me" type="checkbox" class="form-check-input" id="Check1">
-                            <label class="form-check-label" for="Check1">Remember Me</label>
-                        </div>
-                        <button (click)="submit()" class="btn btn-primary">Submit</button>
-                        <button class="btn btn-info">Forgot</button>
-                    </div>
+                        <a class="btn btn-primary" role="button" (click)="submit()">Login</a>
+                    </form>
                 </div>
             </div>
         </div>
