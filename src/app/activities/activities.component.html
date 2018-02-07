@@ -1,0 +1,35 @@
+<table class="table table-striped table-dark table table-{1:striped|sm|bordered|hover|inverse}" style="font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">
+  <thead class="thead-light thead-inverse|thead-default">
+    <tr align="align-center">
+      <th>Title</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr routerLink="/activity/details/{{activity.ID}}" *ngFor="let activity of activities">
+      <td scope="row">{{activity.Title}}</td>
+      <td></td>
+      <td></td>
+    </tr>
+
+      
+        <div>
+          <label for=""></label>
+          <input type="text"
+            class="form-control" [(ngModel)]="title" name="title" id="title" aria-describedby="helpId" placeholder="Title">
+          <small id="helpId" class="form-text text-muted">Help text</small>
+        </div>
+            <button (click)="create(title)" class="btn">
+                    Create <span class="badge badge-primary|secondary|success|danger|warning|info|light|dark"></span>
+            </button>
+        
+     
+
+    <tr>
+      <td scope="row"></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
