@@ -1,0 +1,33 @@
+
+
+
+<table class="table" id="books">
+  <thead>
+    
+    <tr>
+      <th>Id </th>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Publish Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr routerLink="/book/details/{{data.ID}}" *ngFor="let data of bdata">
+       
+      <td >{{data.ID}}</td>
+      <td>{{data.Title}}</td>
+      <td>{{data.Description}}</td>
+      <td>{{data.PublishDate}}</td>
+      <button (click)="Delete(data.ID)" class="btn btn-danger">Delete</button>
+      <button (click)="Update(data.ID)" class="btn btn-success">Update</button>
+      
+    </tr>
+    <tr >
+        <input type="text" [(ngModel)]="Title" id="Title">
+        <button  (click)="Create( Title)" class="btn btn-success">Create</button>
+    </tr>
+    
+    
+  </tbody>
+</table>
