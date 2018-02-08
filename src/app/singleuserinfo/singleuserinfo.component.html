@@ -1,0 +1,34 @@
+<table class="table table-dark col-4">
+  <thead>
+    <tr>
+      <th>{{user.FirstName}} {{user.LastName}}'s Profile</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+        <td>ID: {{user.ID}}</td>
+    </tr>
+    <tr>
+        <td>Book ID: {{user.IDBook}}</td>
+    </tr>
+    <tr>
+      <td>First Name: {{user.FirstName}}</td>
+      <td scope="row"></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Last Name: {{user.LastName}}</td>
+  </tr>
+    <tr>
+      <td>
+        <div class="btn-group">
+          <button type="button" class="btn btn-primary" (click)="create()">Create</button>
+          <td></td>
+          <button type="button" class="btn btn-primary" (click)="update(user.ID)">Update</button>
+          <td></td>
+          <button type="button" class="btn btn-primary" (click)="delete()">Delete</button>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
