@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {SingleuserinfoComponent} from '../../src/app/singleuserinfo/singleuserinfo.component';
 
 @Component({
   selector: 'app-root',
@@ -6,9 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Batman';
 
-  changeVal(){
-    this.title = "Joker"
-  }
+
 }
+
