@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import {SingleuserinfoComponent} from '../../src/app/singleuserinfo/singleuserinfo.component';
 
 @Component({
   selector: 'app-root',
@@ -7,7 +6,6 @@ import {SingleuserinfoComponent} from '../../src/app/singleuserinfo/singleuserin
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-
 
 }
 
