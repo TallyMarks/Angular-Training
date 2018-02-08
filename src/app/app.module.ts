@@ -1,19 +1,27 @@
+import { AppRouter } from './app.router';
 import { RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
-import {AppRouter} from'./app.router'
-import { Http, Response,HttpModule } from '@angular/http';
+
+import { BsDropdownModule } from 'ngx-bootstrap';
+import { HttpModule } from '@angular/http';
+import { UserinfoComponent } from './userinfo/userinfo.component';
+import { SingleuserinfoComponent } from './singleuserinfo/singleuserinfo.component';
+
+import { HttpModule } from '@angular/http';
 import { BooksComponent } from './books/books.component'
 import { NewComponent } from './new/new.component';
-
 
 @NgModule({
 	declarations: [
 		AppComponent,
-		BooksComponent,
+
+    UserinfoComponent,
+		SingleuserinfoComponent,
+
+    BooksComponent,
 		NewComponent,
 	],
 	imports: [
@@ -21,9 +29,12 @@ import { NewComponent } from './new/new.component';
 		BrowserModule,
 		FormsModule,
 		HttpModule,
-		AppRouter
+
+    ReactiveFormsModule,
+		BsDropdownModule.forRoot(),
+		AppRouter,
 	],
-	providers: [BooksComponent
+	providers: [
 	],
 	bootstrap: [AppComponent]
 })
